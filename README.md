@@ -1,4 +1,4 @@
-# stubhub-event-app
+# StubHub Event App
 
 This Android application receives a list of recursive events from Json assets and display in the recycler view. It also allows user to search the events from Json directory with City and Price tags.
 
