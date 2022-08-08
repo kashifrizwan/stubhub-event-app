@@ -4,6 +4,10 @@ This Android application receives a list of recursive events from Json assets an
 
 ## Architecture
 
+master
+
+## Architecture
+
 - Model-View-ViewModel
 - Hilt Dagger for Dependency Injection
 - LiveData for Reactive Programming
