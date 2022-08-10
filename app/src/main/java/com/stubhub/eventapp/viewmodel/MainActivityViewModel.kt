@@ -18,11 +18,16 @@ class MainActivityViewModel @Inject constructor(
     val eventsLiveData: MutableLiveData<Status> = MutableLiveData()
 
     init {
-        getEventsList("", Int.MAX_VALUE)
+        getEventsList()
     }
 
-    fun getEventsList(city: String, price: Int) = viewModelScope.launch {
+    private fun getEventsList() = viewModelScope.launch {
         eventsLiveData.postValue(Loading)
-        eventsLiveData.postValue(eventsRepository.getEventsList(city, price))
+        eventsLiveData.postValue(eventsRepository.getEventsList())
+    }
+
+    fun searchEvents(city: String, price: Int) = viewModelScope.launch {
+        eventsLiveData.postValue(Loading)
+        eventsLiveData.postValue(eventsRepository.searchEvents(city, price))
     }
 }

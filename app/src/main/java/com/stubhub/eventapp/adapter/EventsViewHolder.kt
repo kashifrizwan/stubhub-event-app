@@ -9,7 +9,7 @@ class EventsViewHolder(
     private val viewBinding: ItemEventsListBinding
 ): RecyclerView.ViewHolder(viewBinding.root) {
 
-    val context = viewBinding.root.context
+    private val context = viewBinding.root.context
 
     fun onBind(event: Event) {
         viewBinding.artist.text = event.name

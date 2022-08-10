@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     private fun setOnClickListeners() {
         binding.searchBtn.setOnClickListener {
             hideKeyboard()
-            viewModel.getEventsList(
+            viewModel.searchEvents(
                 city = binding.citySearchEdittext.text.toString(),
                 price = binding.priceSearchEdittext.text.toString().toIntOrNull() ?: Int.MAX_VALUE
             )

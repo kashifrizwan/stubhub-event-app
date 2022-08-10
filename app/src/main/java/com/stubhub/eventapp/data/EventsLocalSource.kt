@@ -18,15 +18,13 @@ const val eventsFileName = "events.json"
 class EventsLocalSource @Inject constructor(
     @ApplicationContext val context: Context
 ) {
-    fun getEvents(city: String, price: Int) : Status {
+    fun getEvents() : Status {
         return try {
             val eventsCategory: EventsCategory = Gson().fromJson(
                 getEventsFromJson(),
                 object: TypeToken<EventsCategory>() {}.type
             )
-            val flatEvents = getFlatEvents(eventsCategory)
-            val filteredEvents = flatEvents.filter { it.city.contains(city) && it.price <= price }
-            Success(filteredEvents)
+            Success(getFlatEvents(eventsCategory))
         } catch (exception: Exception) {
             Error
         }
